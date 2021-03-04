@@ -1,0 +1,159 @@
+% https://www.grund-wissen.de/informatik/latex/mathematischer-formelsatz.html
+% https://docplayer.org/28012320-Mathematische-formelsammlung.html
+% add CC license
+% 
+
+% Autor:
+\author{Dirk~Messetat}
+% Datum: heute
+\date{\today}
+% Versionsnummer:
+\newcommand{\versionsnummer}{1.0.0-SNAPSHOT}
+
+% URL:
+\newcommand{\url}{}
+
+% Titel:
+\title{Mathematische \\
+FORMELSAMMLUNG \\[2ex] \small Version: \versionsnummer \\[2ex] \texttt{ \url{http://github.com/codirk/formelsamlung} }}
+%
+% DIN A5 Seite:
+\documentclass[8pt,a4paper,fleqn]{article}
+% Seitengeometrie festlegen:
+
+\setlength{\parindent}{0in}
+\setlength{\mathindent}{0pt}
+
+\usepackage[utf8]{inputenc}
+
+\usepackage{helvet}
+\usepackage{ngerman}
+\usepackage{curves}
+\usepackage{latexsym} % ein paar Symbole
+\usepackage{textcomp} % ein paar Symbole
+\usepackage[dvips]{rotating} % für rotate-Befehl
+\usepackage{geometry}
+\geometry{left=1.5cm,textwidth=19cm,top=0.5cm,textheight=26cm}
+
+
+%\usepackage{creativecommons}
+
+\usepackage{amsmath}
+%\usepackage[draft]{graphics} % ohne Bilder (Entwurf)
+\usepackage{graphics} % Bilder einbinden
+
+\nonfrenchspacing
+\renewcommand{\familydefault}{\sfdefault}
+
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+
+% Fill with blanks to bottom of first page
+\vfill
+ 
+
+\begin{flushright}
+    \copyright  2021 Dirk Messetat git [at] messetat [dot] com. \\
+    This work is licensed under a Creative Commons Attribution- ShareAlike 3.0 License.
+    To view a copy of this license visit:
+     \url{http://creativecommons.org/licenses/by-sa/3.0/legalcode}.
+\end{flushright}
+
+\pagebreak
+
+
+
+% Inhaltsverzeichnis
+\tableofcontents
+\thispagestyle{empty}
+
+
+\vfill
+
+\begin{center}
+\small{Dieses Dokument wurde mit \LaTeX{} gesetzt.}
+\end{center}
+
+%
+\newpage
+%
+
+\clearpage
+\pagenumbering{arabic} 
+
+\section{Mengenlehre}
+\section{Arithmetik}
+\subsection{Brüche}
+
+Addition und Subtraction gleichnamiger Brüche:
+
+\begin{align*}
+  \frac{a}{c} \pm \frac{b}{c} =  \frac{a \pm b}{c} 
+\end{align*}
+
+Addition und Subtraction nicht gleichnamiger Brüche:
+
+\begin{align*}
+\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{db} 
+\end{align*}
+
+\begin{align*}
+\frac{a}{b} \pm c = \frac{a}{b} \pm \frac{c}{1} = \frac{a \pm bc}{b} 
+\end{align*}
+
+Multiplication Bruch mit ganzer Zahl:
+\begin{align*}
+\frac{a}{b} \cdot c = \frac{a \cdot c}{b} 
+\end{align*}
+
+Division Bruch mit ganzer Zahl:
+\begin{align*}
+\frac{a}{b} : c = \frac{a}{b \cdot c} 
+\end{align*}
+
+Division Bruch mit Bruch:
+\begin{align*}
+\frac{a}{b} : \frac{c}{d} = \frac{a}{b}  \cdot \frac{d}{c} = \frac{a \cdot d }{b \cdot c} 
+\end{align*}
+
+Kürzen:
+\begin{align*}
+\frac{ac}{bc} = \frac{a \cdot c}{b \cdot c} =  \frac{a \cdot c : c }{b \cdot c : c} =\frac{a}{b} 
+\end{align*}
+
+Erweitern:
+\begin{align*}
+\frac{a}{b} =  \frac{ac}{bc} =   \frac{a \cdot c}{b \cdot c} 
+\end{align*}
+
+\subsection{Klammerrechnung}
+\subsection{Binomische Formeln}
+\section{Algebra}
+\section{Relationen und Funktionen}
+\section{Folgen und Reihen}
+\section{Differenzialrechnung}
+\section{Integralrechnung}
+\section{Geometrie}
+\subsection{Planimetrie}
+\subsection{Stereometrie}
+\subsection{Trigonometrie}
+\subsection{Geniometrie}
+\section{Vectorrechung}
+$\vec{B}$
+\section{Matrixrechnung}
+\section{Statistik}
+
+\end{document}
+% ======================= END
+
+$ \to $ % daraus folgt
+
+$$\frac{a \pm b}{c} =  \frac{a}{c} \pm \frac{b}{c} $$
+
+$\frac{a \pm b}{c} =  \frac{a}{c} \pm \frac{b}{c} $
+
+
+
