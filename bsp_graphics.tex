@@ -1,0 +1,233 @@
+\documentclass{scrartcl}
+
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+
+\usepackage{framed}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{amsmath}
+
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usetikzlibrary{shapes,automata,arrows}
+\usepackage{pgfplots}
+\usepackage{color}
+
+
+
+\begin{document}
+
+%---
+
+\subsection{Picture}
+
+
+{
+\setlength{\unitlength}{1cm}
+\begin{picture}(2,2)
+    \put(0,0){\vector(4,0){3.3}}
+    \put(0,0){\vector(0,4){3.3}}
+    \put(3.4,-0.1){$x$}
+    \put(-0.1,3.4){$y$}    
+    \multiput(0,0)(1,0){4}{\line(0,-1){0.1}}
+    \multiput(0,0)(0,1){4}{\line(-1,0){0.1}}
+
+    \put(0,2){\vector(1,-1){2}}
+    \put(2,0){\vector(1,1){1}}
+    \put(2,2){\circle*{1}}
+    \put(2,2){\circle{2}}    
+\end{picture}
+}
+
+
+%----
+
+\subsection{Tikz}
+
+
+\begin{tikzpicture}
+\draw[->] (0, 0) -- (0, 4);
+\draw[->] (0, 0) -- (4, 0);
+\node at (0, 4.2) {$y$}; 
+ \node at (4.125, -0.25) {$x$};
+ \foreach \x in {0, 1, 2, 3}
+ {
+  \draw (\x,0) -- (\x,-0.2);
+  \node at (\x,-0.75) {$\x$}; 
+  \draw (0, \x) -- (-0.2, \x);
+  \node at (-0.5, \x-0.25) {$\x$};
+ }
+\coordinate (m) at (2,2);
+\draw (m) circle (0.5);
+\draw[fill] (m) circle (0.25);
+\draw[->] (0, 2) -- (2, 0);
+\draw[->] (2, 0) -- (3, 1);
+\end{tikzpicture}
+
+
+%---
+
+\subsection{Automata}
+
+%\usepackage{tikz}
+%\usetikzlibrary{automata, arrows}
+
+Graph des regul\"aren Ausdrucks \texttt{(ab*|b|ca)}
+
+\begin{tikzpicture}[shorten >=1pt, 
+    node distance=2.2cm, >=stealth, thick, auto, bend angle=45]
+  \tikzstyle{every state}=[draw=blue!50, very thick, fill=blue!20]
+
+  \node[state, initial]      (A)                                    {$S_0$};
+  \node[state, accepting]    (B) [below of=A]                       {$S_1$};
+  \node[state, accepting]    (C) [right of=B, node distance=1.25cm] {$S_2$};
+  \node[state]               (D) [below of=B]                       {$S_3$};
+
+  \path[->] (A) edge                             node {$a$} (B)
+            (B) edge [loop below]                node {$b$} ()
+            (A) edge                             node {$b$} (C)
+            (A) edge [bend right, bend angle=45] node {$c$} (D)
+            (D) edge [bend right]                node {$a$} (C);
+\end{tikzpicture}
+
+
+
+%\usepackage{tikz}
+%\usetikzlibrary{shapes,arrows}
+
+\subsection{Automata 2}
+
+\tikzstyle{block} = [rectangle, draw, 
+    text width=8em, text centered, rounded corners, minimum height=4em]
+	\tikzstyle{line} = [draw, thick, -> ] %, -latex']
+ 	\tikzstyle{cloud} = [ellipse, draw, node distance=4cm,
+     minimum height=2em]
+
+	\begin{tikzpicture}[node distance = 2cm, auto]
+    % Place nodes
+    	\node [cloud] (inhalt) {\small \texttt{inhalt.tex}};
+     	\node [block, left of=inhalt, above of=inhalt] (handout) 
+            {\small \texttt{handout.tex}};
+    	\node [block, right of=inhalt, above of=inhalt] (pres) 
+            {\small \texttt{presentation.tex}};
+    	\path [line] (inhalt) -- (pres);
+    	\path [line] (inhalt) -- (handout);
+	\end{tikzpicture}
+    
+%---
+
+
+\subsection{trees}
+
+
+\begin{tikzpicture}
+\Tree
+[.S 
+    [.NP [.Det the ] [.N cat ] ]
+    [.VP [.V sat ]
+        [.PP 
+            [.P on ]
+            [.NP [.Det the ] [.N mat ] ] 
+        ]
+    ] 
+]
+\end{tikzpicture}
+
+%---
+
+
+\subsection{Pythagoras}
+
+\begin{tikzpicture}
+    % for a, A(1, 1.5) top right, side length = 1
+    \fill [red!15]   (0,0) rectangle (1,-1);     
+    % for b, B(0, 0) bottom left, side length = 1.5
+    \fill [green!15] (1,0) rectangle (2.5,1.5);
+
+    % length of c, C(1, 0) bottom right
+    \pgfmathsetmacro{\lengthC}{(sqrt(1^2+1.5^2))}
+    % angle between a and c
+    \pgfmathsetmacro{\myAngle}
+        {90 - acos((\lengthC^2 + 1^2 - 1.5^2) / (2*1.8*1))}
+    \begin{scope}[rotate=-\myAngle] 
+        \fill [blue!15] (0,0) rectangle (-\lengthC,\lengthC); % for c
+    \end{scope}
+
+    % labels
+    \draw [gray,decorate,decoration={brace,amplitude=5pt}]
+          (1,0) -- (0,0)
+    node [black,midway,below=3pt] {\footnotesize $a$};
+    \draw [gray,decorate,decoration={brace,amplitude=5pt}]
+          (1,1.5) -- (1,0)
+    node [black,midway,right=3pt] {\footnotesize $b$};
+    \draw [gray,decorate,decoration={brace,amplitude=5pt}]
+          (0,0) -- (1,1.5)
+    node [black,midway,left=1.5pt,yshift=6pt] {\footnotesize $c$};
+\end{tikzpicture}
+
+
+
+\subsection{Trigonometrie}
+
+\begin{tikzpicture}[scale=2,cap=round]
+  % Local definitions
+  \def\costhirty{0.8660256}
+  % Colors
+  \colorlet{anglecolor}{orange}
+  \colorlet{sincolor}{red}
+  \colorlet{tancolor}{green!80!black}
+  \colorlet{coscolor}{blue}
+  % Styles
+  \tikzstyle{axes}=[]
+  \tikzstyle{important line}=[very thick]
+  \tikzstyle{information text}=[]  
+  % The graphic
+  \draw[style=help lines,step=0.5cm] (-1.4,-1.4) grid (1.4,1.4);
+  \draw (0,0) circle (1cm);
+  \begin{scope}[style=axes]
+    \draw[->] (-1.5,0) -- (1.5,0) node[right] {$x$} coordinate(x axis);
+    \draw[->] (0,-1.5) -- (0,1.5) node[above] {$y$} coordinate(y axis);
+    \foreach \x/\xtext in {-1, 1}
+       \draw[xshift=\x cm] (0pt,1pt) -- (0pt,-1pt) node[below,fill=white] {$\xtext$};
+    \foreach \y/\ytext in {-1, 1}
+       \draw[yshift=\y cm] (1pt,0pt) -- (-1pt,0pt) node[left,fill=white] {$\ytext$};
+  \end{scope}
+  \filldraw[fill=orange!20,draw=anglecolor] (0,0) -- (3mm,0pt) arc(0:30:3mm);
+  \draw (15:2mm) node[anglecolor] {$\alpha$};
+  \draw[style=important line,sincolor]
+    (30:1cm) -- node[left=1pt,fill=white] {$\sin \alpha$} (30:1cm |- x axis);
+  \draw[style=important line,coscolor]
+    (30:1cm |- x axis) -- node[below=2pt,fill=white] {$\cos \alpha$} (0,0);
+  \draw[style=important line,tancolor] (1,0) -- node[right=1pt,fill=white] {
+    $\displaystyle \tan \alpha \color{black}=
+    \frac{{\color{sincolor}\sin \alpha}}{\color{coscolor}\cos \alpha}$}
+    (intersection of 0,0--30:1cm and 1,0--1,1) coordinate (t);
+  \draw (0,0) -- (t);
+  \draw[xshift=3.2cm]
+    node[text width=3cm]
+     {\small SeitenverhÃ¤ltnisse im rechtwinkligen Dreieck:
+      \[\sin \alpha = \frac{\text{Gegenkathete}}{\text{Hypothenuse}}\]
+      \[\cos \alpha = \frac{\text{Ankathete}}{\text{Hypothenuse}}\]
+      \[\tan \alpha = \frac{\text{Gegenkathete}}{\text{Ankathete}}\]};
+\end{tikzpicture}
+
+
+\subsection{PGFPlots}
+
+\begin{tikzpicture}
+    \begin{axis}[width=190pt,axis x line=middle, axis y line=center, tick align=outside]
+        \addplot+[mark=none, smooth] (\x,{1/10*\x^2});
+		\addplot+[mark=none, smooth] (\x,{sin(\x r)});
+    \end{axis}
+\end{tikzpicture}
+
+
+
+
+
+\end{document}

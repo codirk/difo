@@ -15,14 +15,21 @@
 
 % Titel:
 \title{Mathematische \\
-FORMELSAMMLUNG \\[2ex] \small Version: \versionsnummer \\[2ex] \texttt{ \url{http://github.com/codirk/formelsamlung} }}
+FORMELSAMMLUNG \\[2ex] \small Version: \versionsnummer \\[2ex] \texttt{ \url{http://github.com/codirk/formelsamlung} }\\
+ \hfill\break
+Klasse 5-13 (auch für Bayern ;-)
+} 
 %
 % DIN A5 Seite:
-\documentclass[8pt,a4paper,fleqn]{article}
+\documentclass[12pt,a4paper,fleqn,twoside,pdf,final]{article}
 % Seitengeometrie festlegen:
 
 \setlength{\parindent}{0in}
 \setlength{\mathindent}{0pt}
+
+
+\usepackage{amsfonts} 
+
 
 \usepackage[utf8]{inputenc}
 
@@ -33,10 +40,18 @@ FORMELSAMMLUNG \\[2ex] \small Version: \versionsnummer \\[2ex] \texttt{ \url{htt
 \usepackage{textcomp} % ein paar Symbole
 \usepackage[dvips]{rotating} % für rotate-Befehl
 \usepackage{geometry}
-\geometry{left=1.5cm,textwidth=19cm,top=0.5cm,textheight=26cm}
+\geometry{left=0.5cm,textwidth=19cm,top=1.0cm,textheight=26cm}
+
+\usepackage{array}
 
 
 %\usepackage{creativecommons}
+
+% striked out text
+\usepackage[normalem]{ulem}
+\usepackage{cancel}
+
+
 
 \usepackage{amsmath}
 %\usepackage[draft]{graphics} % ohne Bilder (Entwurf)
@@ -67,6 +82,7 @@ FORMELSAMMLUNG \\[2ex] \small Version: \versionsnummer \\[2ex] \texttt{ \url{htt
 
 
 % Inhaltsverzeichnis
+\setcounter{tocdepth}{1}
 \tableofcontents
 \thispagestyle{empty}
 
@@ -119,9 +135,13 @@ Division Bruch mit Bruch:
 \frac{a}{b} : \frac{c}{d} = \frac{a}{b}  \cdot \frac{d}{c} = \frac{a \cdot d }{b \cdot c} 
 \end{align*}
 
+
+\newcommand{\stkout}[1]{\ifmmode\text{\cancel{\ensuremath{#1}}}\else\sout{#1}\fi}
+
+
 Kürzen:
 \begin{align*}
-\frac{ac}{bc} = \frac{a \cdot c}{b \cdot c} =  \frac{a \cdot c : c }{b \cdot c : c} =\frac{a}{b} 
+\frac{ac}{bc} = \frac{a \cdot c}{b \cdot c} =  \frac{a \cdot c : c }{b \cdot c : c} =  \frac{a \cdot 1 }{b \cdot 1 } =  \frac{a \cdot \stkout{c} }{b \cdot \stkout{c}}  =  \frac{a}{b}  
 \end{align*}
 
 Erweitern:
@@ -137,10 +157,18 @@ Addition und Subtraction von Summanden:
  a - (b \pm c) =  a - b \mp c
 \end{align*}
 
+
+
+
 Multiplikation mit Summe:
 \begin{align*}
  a (b \pm c) =  a \cdot (b \pm c) = a \cdot b \pm a \cdot c = ab \pm ac
 \end{align*}
+
+\begin{align*} 
+ \sum_{i=1}^n ax_{i}  = a \cdot  \sum_{i=1}^n x_{i} = a  \sum_{i=1}^n x_{i}
+ \end{align*}
+
 
 Multiplikation von Summen:
 \begin{align*}
@@ -159,6 +187,11 @@ Division einer Summe:
 (a+b)(a-b) = a^ 2 - b^2
 \end{align*}
  
+
+\begin{align*} 
+n! = 1\cdot2\cdot3...(n-1)n= \prod_{k = 1}^{n}k    (n \in \mathbb{N})
+\end{align*}
+ 
  
 $a^ 2 + b^2 $ (reell nicht zerlegbar!) 
 
@@ -168,12 +201,37 @@ a^ 3 - b^3 = (a-b)( a^ 2 + ab + b^2)
 \end{align*}
 
 
+\begin{tabular}{>{$n=}l<{$\hspace{12pt}}*{14}{c}}
+0 &&&&&&&1&&&&&&& $(a+b)^ 0=1$\\
+1 &&&&&&1&&1&&&&&& $(a+b)^ 1=1a+1b$ \\
+2 &&&&&1&&2&&1&&&&&  $(a+b)^ 2=1a^ 2+2ab+1b^2$\\
+3 &&&&1&&3&&3&&1&&&& $(a+b)^ 3=1a^3+3a^2 b+3ab^2+1b^3$\\
+4 &&&1&&4&&6&&4&&1&&& $(a+b)^ 4=a^4+4a^3 b+6a^2b^2+4ab^3+b^4$\\
+5 &&1&&5&&10&&10&&5&&1&&\\
+6 &1&&6&&15&&20&&15&&6&&1&
+\end{tabular}
+
+Binominalkoeffizienten
+\begin{align*}
+\binom{n}{k}= \frac{n(n-1)(n-2)...[n-(k-1)] }{k!} =  \frac{n!}{k!(n-k)!}
+\end{align*}
+
+
 \section{Algebra}
 \section{Relationen und Funktionen}
 \section{Folgen und Reihen}
 \section{Differenzialrechnung}
 \section{Integralrechnung}
 \section{Geometrie}
+\begin{align*} 
+\frac{\pi}{4}  =  \sum_{n=0}^\infty  \frac{(-1)^n}{2n+1} = \frac{1}{1} -  \frac{1}{3} +  \frac{1}{5} -  \frac{1}{7} + \frac{1}{9} \mp ... = 3,14159...
+\end{align*}
+\begin{align*} 
+e = 1 + \frac{1}{1}+\frac{1}{1 \cdot 2}+\frac{1}{1 \cdot 2  \cdot 3}+\frac{1}{1 \cdot 2  \cdot 3  \cdot 4}+... = \sum_{k=0}^\infty \frac{1}{k!} = 2,71828183...
+\end{align*}
+
+
+
 \subsection{Planimetrie}
 \subsection{Stereometrie}
 \subsection{Trigonometrie}
@@ -181,6 +239,47 @@ a^ 3 - b^3 = (a-b)( a^ 2 + ab + b^2)
 \section{Vectorrechung}
 $\vec{B}$
 \section{Matrixrechnung}
+
+ 
+ $$
+\Sigma=\left[
+\begin{array}{ccc}
+   \sigma_{11} & \cdots & \sigma_{1n} \\
+   \vdots & \ddots & \vdots \\
+   \sigma_{n1} & \cdots & \sigma_{nn}
+\end{array}
+\right]
+$$
+
+ $$
+\Sigma=\left(
+\begin{array}{ccc}
+   \sigma_{11} & \cdots & \sigma_{1n} \\
+   \vdots & \ddots & \vdots \\
+   \sigma_{n1} & \cdots & \sigma_{nn}
+\end{array}
+\right)
+$$
+
+
+\newcommand*{\rowvec}[1]{\left( #1\right)}
+\newcommand*{\rowvecVert}[1]{\left(\begin{array}{c}#1\end{array}\right)}
+
+$$
+\rowvec{1,2,3}
+$$
+
+$$
+\left( 
+\begin{array}{c}
+1 \\ 2 \\ 3
+\end{array}
+\right)
+$$
+$$
+\vec{B} = \rowvecVert{1 \\ 2 \\ 3}
+$$
+
 \section{Statistik}
 
 \end{document}
