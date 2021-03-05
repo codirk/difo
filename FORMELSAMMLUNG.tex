@@ -1,7 +1,7 @@
 % https://www.grund-wissen.de/informatik/latex/mathematischer-formelsatz.html
 % https://docplayer.org/28012320-Mathematische-formelsammlung.html
 % add CC license
-% 
+% use Command+Shift+Click in the PDF to jump to the source code line when using TeXShop
 
 % Autor:
 \author{Dirk~Messetat}
@@ -61,6 +61,11 @@ Klasse 5-13 (auch für Bayern ;-)
 \renewcommand{\familydefault}{\sfdefault}
 
 
+% newcommand
+\newcommand{\stkout}[1]{\ifmmode\text{\cancel{\ensuremath{#1}}}\else\sout{#1}\fi}
+
+
+
 \begin{document}
 \maketitle
 \thispagestyle{empty}
@@ -100,44 +105,19 @@ Klasse 5-13 (auch für Bayern ;-)
 \clearpage
 \pagenumbering{arabic} 
 
+
+
 \section{Mengenlehre}
+
+% \begin{align*}
+% [a;b] = TODO \{x| a <  x \leq b, x \in \mathbb{R}\} \\
+% ]a;b[ = TODO \{x| a <  x \leq b, x \in \mathbb{R}\} \\
+% [a;b[ = TODO \{x| a <  x \leq b, x \in \mathbb{R}\} \\
+% ]a;b] = TODO \{x| a <  x \leq b, x \in \mathbb{R}\}
+% \end{align*}
+
 \section{Arithmetik}
 \subsection{Brüche}
-
-Addition und Subtraction gleichnamiger Brüche:
-
-\begin{align*}
-  \frac{a}{c} \pm \frac{b}{c} =  \frac{a \pm b}{c} 
-\end{align*}
-
-Addition und Subtraction nicht gleichnamiger Brüche:
-
-\begin{align*}
-\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{db} 
-\end{align*}
-
-\begin{align*}
-\frac{a}{b} \pm c = \frac{a}{b} \pm \frac{c}{1} = \frac{a \pm bc}{b} 
-\end{align*}
-
-Multiplication Bruch mit ganzer Zahl:
-\begin{align*}
-\frac{a}{b} \cdot c = \frac{a \cdot c}{b} 
-\end{align*}
-
-Division Bruch mit ganzer Zahl:
-\begin{align*}
-\frac{a}{b} : c = \frac{a}{b \cdot c} 
-\end{align*}
-
-Division Bruch mit Bruch:
-\begin{align*}
-\frac{a}{b} : \frac{c}{d} = \frac{a}{b}  \cdot \frac{d}{c} = \frac{a \cdot d }{b \cdot c} 
-\end{align*}
-
-
-\newcommand{\stkout}[1]{\ifmmode\text{\cancel{\ensuremath{#1}}}\else\sout{#1}\fi}
-
 
 Kürzen:
 \begin{align*}
@@ -149,22 +129,65 @@ Erweitern:
 \frac{a}{b} =  \frac{ac}{bc} =   \frac{a \cdot c}{b \cdot c} 
 \end{align*}
 
-\subsection{Klammerrechnung}
+Addition und Subtraktion gleichnamiger Brüche:
 
-Addition und Subtraction von Summanden:
 \begin{align*}
- a + (b \pm c) = (a + b) \pm c = a + b \pm c \\
- a - (b \pm c) =  a - b \mp c
+  \frac{a}{c} \pm \frac{b}{c} =  \frac{a \pm b}{c} 
+\end{align*}
+
+Addition und Subtraktion nicht gleichnamiger Brüche:
+
+\begin{align*}
+\frac{a}{b} \pm \frac{c}{d} = \frac{ad}{bd} \pm \frac{cb}{db} = \frac{ad \pm bc}{db} \longrightarrow \frac{a}{b} \pm c = \frac{a}{b} \pm \frac{c}{1} = \frac{a \pm bc}{b} 
+\end{align*}
+
+Gemischte Brüche
+\begin{align*}
+  c\frac{a}{b} = c \cdot \frac{a}{b}= \frac{a}{b} \cdot c= \frac{a}{b}c
+\end{align*}
+Achtung! : Addition bei Zahlen
+\begin{align*}
+2\frac{1}{3} = 2+\frac{1}{3} =  \frac{6}{3} + \frac{1}{3} = \frac{7}{3} 
 \end{align*}
 
 
+Multiplikation Bruch mit ganzer Zahl:
+
+\begin{align*}
+\frac{a}{b} \cdot c = \frac{a}{b}  \cdot \frac{c}{1}  = \frac{a \cdot c}{b \cdot 1} = \frac{a \cdot c}{b}  = \frac{a c}{b} 
+\end{align*}
+
+Division Bruch mit ganzer Zahl (Multiplikation mit Kehrwert):
+\begin{align*}
+\frac{a}{b} : c = \frac{a}{b} : \frac{c}{1} =  \frac{a}{b} \cdot \frac{1}{c} = \frac{a}{b \cdot c}  = \frac{a}{b c} 
+\end{align*}
+
+Division Bruch mit Bruch (Multiplikation mit Kehrwert):
+\begin{align*}
+\frac{a}{b} : \frac{c}{d} = \frac{a}{b}  \cdot \frac{d}{c} = \frac{a \cdot d }{b \cdot c} = \frac{a d }{b c} 
+\end{align*}
+
+
+
+
+\pagebreak
+\subsection{Klammerrechnung}
+
+Addition von Summanden (assoziativ):
+\begin{align*}
+ a + (b \pm c) = (a + b) \pm c = a + b \pm c 
+\end{align*}
+Subtraction von Summanden:
+\begin{align*}
+ a - (b \pm c) = a + (-1) \cdot  (b \pm c) = a + (  (-1) \cdot  b \pm  (-1) \cdot c)  =  a - b \mp c
+\end{align*}
 
 
 Multiplikation mit Summe:
 \begin{align*}
  a (b \pm c) =  a \cdot (b \pm c) = a \cdot b \pm a \cdot c = ab \pm ac
 \end{align*}
-
+Bzw.
 \begin{align*} 
  \sum_{i=1}^n ax_{i}  = a \cdot  \sum_{i=1}^n x_{i} = a  \sum_{i=1}^n x_{i}
  \end{align*}
@@ -211,24 +234,51 @@ a^ 3 - b^3 = (a-b)( a^ 2 + ab + b^2)
 6 &1&&6&&15&&20&&15&&6&&1&
 \end{tabular}
 
-Binominalkoeffizienten
+Binominalkoeffizienten (n über k)
 \begin{align*}
 \binom{n}{k}= \frac{n(n-1)(n-2)...[n-(k-1)] }{k!} =  \frac{n!}{k!(n-k)!}
 \end{align*}
 
+\subsection{Potenzen}
+Potenz eines Produktes gleicher Grundzahl: 
+$a^m \cdot a^n = a^{m+n}$
+
+Potenz einer Division/Bruches gleicher Grundzahl: $ \frac{a^m}{a^n} = a^{m-n}$ \\
+$\longrightarrow$ $ a^0 =  \frac{a^n}{a^n} =   \frac{ \cancel{a^n} \cdot 1}{ \cancel{a^n} \cdot 1} = a^{n-n}  = 1$  ; $a \in \{a| a \neq 0\}$ \\
+$\longrightarrow$ negative Exponenten: $ a^{-n} =  a^{0-n} =  \frac{a^0}{a^n}  =  \frac{1}{a^n} $ \\
+
+Potenz eines Produktes mit gleichen Exponenten: $ {a^n}{b^n} = (ab)^{n}$ 
+
+Potenz einer Division/Bruches mit gleichen Exponenten: $ \frac{a^n}{b^n} = (\frac{a}{b}) ^n$ 
+
+Potenz einer Potenz: $ (a^m)^n = a^{m^n} = a^{m \cdot n}$ 
+
+Potenz von 0: $ 0^n = 0 $ ;  $n \in\{n | n > 0\}$\\
+Potenz 0 von 0: $ 0^0 = foobar $ 
+
+\subsection{Wurzeln}
+\subsection{Logarithmen}
+
 
 \section{Algebra}
+\subsection{Gesetze}
+Kommutativgesetz:Vertauschungsgesetz \\
+Assoziativgesetz: Verknüpfungsgesetz oder auch Verbindungsgesetz (Klammern verschieben) \\
+Distributivgesetz: Verteilungsgesetze (Ausklammern/Ausmultiplizieren)
+
+\subsection{Ungleichungen}
+\subsection{Gleichungen}
+\subsection{Linieare Gleichungen}
+\subsection{Determinanten}
+\subsection{Quadratische Glechungen}
+\subsection{Fundamentalsatz der Algebra}
+Ein Polynom n-ten Grades lässt sich maximal in n Linearfaktoren zerlegen und hat maximal n Lösungen.
+
 \section{Relationen und Funktionen}
 \section{Folgen und Reihen}
 \section{Differenzialrechnung}
 \section{Integralrechnung}
 \section{Geometrie}
-\begin{align*} 
-\frac{\pi}{4}  =  \sum_{n=0}^\infty  \frac{(-1)^n}{2n+1} = \frac{1}{1} -  \frac{1}{3} +  \frac{1}{5} -  \frac{1}{7} + \frac{1}{9} \mp ... = 3,14159...
-\end{align*}
-\begin{align*} 
-e = 1 + \frac{1}{1}+\frac{1}{1 \cdot 2}+\frac{1}{1 \cdot 2  \cdot 3}+\frac{1}{1 \cdot 2  \cdot 3  \cdot 4}+... = \sum_{k=0}^\infty \frac{1}{k!} = 2,71828183...
-\end{align*}
 
 
 
@@ -281,6 +331,31 @@ $$
 $$
 
 \section{Statistik}
+
+\section{Konstanten}
+\begin{align*} 
+\pi =  4 \cdot \sum_{n=0}^\infty  \frac{(-1)^n}{2n+1} = \frac{1}{1} -  \frac{1}{3} +  \frac{1}{5} -  \frac{1}{7} + \frac{1}{9} \mp ... = \textbf{3,14159}...
+\end{align*}
+\begin{align*} 
+e = 1 + \frac{1}{1}+\frac{1}{1 \cdot 2}+\frac{1}{1 \cdot 2  \cdot 3}+\frac{1}{1 \cdot 2  \cdot 3  \cdot 4}+... = \sum_{k=0}^\infty \frac{1}{k!} = \textbf{2,71828183}...
+\end{align*}
+
+
+\section{Zeichenerklärung}
+
+\begin{tabular}[h]{l|l}
+Zeichen &Bedeutung  \\
+\hline
+$\widehat{=}$ & enspricht  \\
+$\longrightarrow$ & daraus folgt \\
+$\sum$ & Summenzeichen \\
+$\prod$ & Produktzeichen \\
+$ \in$ & Element von \\
+\end{tabular}
+
+
+
+
 
 \end{document}
 % ======================= END
