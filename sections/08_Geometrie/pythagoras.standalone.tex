@@ -1,0 +1,40 @@
+\documentclass[tikz,border=10pt]{standalone}
+
+%%%<
+
+\usepackage{float}
+\usepackage{subfig}
+
+\usepackage{framed}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{tikz}
+\usepackage{tikz-qtree}
+\usetikzlibrary{shapes,automata,arrows}
+\usepackage{pgfplots}
+\usepackage{color}
+
+\usetikzlibrary{calc,angles}
+\usetikzlibrary{shapes,arrows,intersections}
+\usetikzlibrary{matrix,fit,calc,trees,positioning,arrows,chains,shapes.geometric,shapes,angles}
+\usetikzlibrary{quotes}
+
+%\usetikzlibrary{calc,angles,quotes}
+\tikzset{square/.style= { to path={ let \p1=(\tikztostart), \p2=(\tikztotarget),
+  \p3=($(\p2)!1!90:(\p1)$), \p4=($(\p1)!1!-90:(\p2)$) in
+  (\p2) foreach \i in {3,4,1,2} {--node[auto=right]{#1} (\p\i)}}}}
+
+
+
+\usepackage{verbatim}
+%%%>
+\begin{comment}
+
+Hello
+\end{comment}
+\begin{document}
+
+\input{pythagoras.tex}
+
+\end{document}

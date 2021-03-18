@@ -13,6 +13,11 @@ schreiben oder ein Pullrequest einstellen.
 
 Versionsübersicht:
 - [Formelsammlung Release 1.0.0 ](http://github.com/codirk/release/1.0.0/formelsammlung.pdf)
+
+# TODO Aufteilung
+- ab Klasse 5
+- ab Klasse 7
+- ab Klasse 10
  
 # Literaturverzeichnis
 - Lothar Papular (1998) Mathematische Formelsammlung: Für Ingenieure und Naturwissenschaftler - 5. Aufl. Braunschweig
