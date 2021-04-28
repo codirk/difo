@@ -3,102 +3,18 @@
 % add CC license
 % use Command+Shift+Click in the PDF to jump to the source code line when using TeXShop
 
-\author{Dirk~Messetat}
-\date{\today}
-\newcommand{\versionsnummer}{1.0.0-SNAPSHOT}
+%\input{HEAD.tex}
+\documentclass{./formulaCollection}
 
-% URL:
-\newcommand{\url}{}
+\RequirePackage{formulaCollection}
 
-% Titel:
-\title{Mathematische \\
-FORMELSAMMLUNG \\[2ex] \small Version: \versionsnummer \\[2ex] \texttt{ \url{http://github.com/codirk/formelsamlung} }\\
- \hfill\break
-Klasse 5-13
-} 
-
-\documentclass[12pt,a4paper,fleqn,twoside,pdf,final]{scrartcl}
-%\documentclass[12pt,a4paper,fleqn,twoside,pdf,final]{article}
-%\documentclass{scrartcl}
-
-
-\usepackage{graphicx}
-
-
-\usepackage[ngerman]{babel}
-\usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
 
 
 \setlength{\parindent}{0in}
 \setlength{\mathindent}{0pt}
 
-\usepackage{amsfonts} 
-
-
-\usepackage{helvet}
-\usepackage{curves}
-\usepackage{latexsym} 
-\usepackage{textcomp} 
-
-% damages the pictures 
-%\usepackage[dvips]{rotating}
-
-\usepackage{geometry}
-
-\geometry{left=0.5cm,textwidth=19cm,top=1.0cm,textheight=26cm}
-
-\usepackage{array}
-
-%\usepackage{creativecommons}
-\usepackage[hidelinks]{hyperref}
-
-\usepackage[
-    type={CC},
-    modifier={by-nc-sa},
-    version={3.0},
-]{doclicense}
-
-
-% striked out text
-\usepackage[normalem]{ulem}
-\usepackage{cancel}
-
-\input{FORMELSAMMLUNG_flex.tex}
-
-
-\usepackage{amsmath}
-%\usepackage[draft]{graphics} % ohne Bilder (Entwurf)
-\usepackage{graphics} % Bilder einbinden
-
-\nonfrenchspacing
-\renewcommand{\familydefault}{\sfdefault}
-
-
-% newcommand
-\newcommand{\stkout}[1]{\ifmmode\text{\cancel{\ensuremath{#1}}}\else\sout{#1}\fi}
-
-\usepackage{float}
-\usepackage{subfig}
-
-\usetikzlibrary{calc,angles}
-\usetikzlibrary{shapes,arrows,intersections}
-\usetikzlibrary{matrix,fit,calc,trees,positioning,arrows,chains,shapes.geometric,shapes,angles}
-\usetikzlibrary{quotes}
-
-%\usetikzlibrary{calc,angles,quotes}
-\tikzset{square/.style= { to path={ let \p1=(\tikztostart), \p2=(\tikztotarget),
-  \p3=($(\p2)!1!90:(\p1)$), \p4=($(\p1)!1!-90:(\p2)$) in
-  (\p2) foreach \i in {3,4,1,2} {--node[auto=right]{#1} (\p\i)}}}}
-
-\usepackage{siunitx}
-
-
 
 \begin{document}
-
-
-
 
 \maketitle
 \thispagestyle{empty}
@@ -115,8 +31,19 @@ Klasse 5-13
 %     \url{http://creativecommons.org/licenses/by-sa/3.0/legalcode}.
 %\end{flushright}
 
+%default:\quad
+%\qrcode{https://www.ctan.org/tex-archive/macros/latex/contrib/qrcode?lang=en}
+%\qquad
+%1 inch high (and wide):
+%\quad
 
-\doclicenseThis
+Wer keine Formeln schreibt, braucht sich damit nicht zu beschäftigen.
+
+\qrcode[height=1in]{http://github.com/codirk/formelsamlung}
+
+
+
+%\doclicenseThis
 
 
 \pagebreak
@@ -140,7 +67,9 @@ Klasse 5-13
 \clearpage
 \pagenumbering{arabic} 
 
-\input{sections/01_Mengenlehre.tex}
+%\input{sections/01_Mengenlehre.tex}
+\subimport*{sections/}{01_Mengenlehre}
+
 \pagebreak
 \input{sections/02_Arithmetik.tex}
 \input{sections/03_Algebra.tex}
@@ -169,11 +98,12 @@ e = 1 + \frac{1}{1}+\frac{1}{1 \cdot 2}+\frac{1}{1 \cdot 2  \cdot 3}+\frac{1}{1 
 \begin{tabular}[h]{l|l}
 Zeichen &Bedeutung  \\
 \hline
-$\widehat{=}$ & enspricht  \\
+$\widehat{=}$ & entspricht  \\
 $\longrightarrow$ & daraus folgt \\
 $\sum$ & Summenzeichen \\
 $\prod$ & Produktzeichen \\
 $ \in$ & Element von \\
+$ |$ & mit der Bedingung \\
 \end{tabular}
 
 
