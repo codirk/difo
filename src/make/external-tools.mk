@@ -58,6 +58,8 @@ PDFLATEX_ARGS				= -file-line-error -halt-on-error
 #--interaction batchmode
 PDFLATEX					= $(PDFLATEX_CMD) $(PDFLATEX_ARGS)
 
+CREATE_SYNCTEX		        = --synctex=0
+
 # form textshop
 # pdftex --file-line-error --shell-escape --synctex=1
 # pdflatex --file-line-error --shell-escape --synctex=1

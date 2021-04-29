@@ -143,6 +143,9 @@ clean:
 	@cd $(DIR_BUILD);$(RM) *.pdf *.synctex.gz
 	@echo $(DIR_BUILD) clean.
 
+cleanup:
+	@rm $(PDFFILES)
+
 
 #	-cd $(dir $<);$(PDFLATEX) --draftmode --output-directory $(dir $<) $< $(FILTER_ERROR);	\
 #	-cd $(dir $<);[ -f $*$(EXT_DDL) ] || $(BIBTEX) $* ;	\

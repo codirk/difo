@@ -75,7 +75,7 @@ $(TMPDIR):
 	@-if [ ! -e $@ ]; then mkdir $@; fi;
 
 
-MSG_INIT					:= Creating Directory _DIRECTORY_
+MSG_INIT := Creating Directory _DIRECTORY_
 
 $(DIR_BUILD):$(TMPDIR)
 	@echo --- $(subst _DIRECTORY_,$(DIR_BUILD),$(MSG_INIT))
