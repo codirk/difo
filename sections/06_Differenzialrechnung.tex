@@ -1,1 +1,54 @@
 \section{Differenzialrechnung}
+\paragraph{Stetigkeit}
+\begin{align*}
+    y &= f(x) \textrm{ ist in } a \in\mathbb{R} \textrm{ stetig, wenn}\\
+    & \lim_{x \to a} f(x) = f(a) \\
+    & \textrm{ ist}
+\end{align*}
+
+\paragraph{Differenzierbarkeit}
+\begin{align*}
+    y &= f(x) \textrm{ ist in } a \in\mathbb{R} \textrm{ differenzierbar, wenn}\\
+   & \lim_{x \to a} \frac{f(x)-f(a)}{x-a} \textrm{ oder } \lim_{\Delta x \to 0} \frac{f(x-\Delta x) -f (x)}{\Delta x}\\
+   & \textrm{ existiert}
+\end{align*}
+
+\paragraph{Ableitungsregeln}
+\begin{align*}
+    Potenzregel &: y= x^n                   &| &y^{\prime} = n \cdot x^{n-1} \\
+    Konstantenregel &: y= a \cdot x^n       &| &y^{\prime} = a \cdot n \cdot x^{n-1} \\
+    Summenregel &: y= f(x) \pm g(x)         &| &y^{\prime} = f^{\prime}(x) \pm g^{\prime}(x) \\
+    Produktregel &: y= u(x) \cdot v(x)      &| &y^{\prime} = u^{\prime}(x) \cdot v(x) + u(x) \cdot v^{\prime}(x)\\
+    Quotientenregel &: y= \frac{u(x)}{v(x)} &| &y^{\prime} = \frac{u^{\prime}(x) \cdot v(x) - u(x) \cdot v^{\prime}(x)}{v(x)^2}\\
+    Kettenregel &: y= f(u(x))               &| &y^{\prime} = u^{\prime}(x) \cdot u^{\prime}(x) = \frac{dy}{du} \cdot \frac{du}{dx} \\
+\end{align*}
+
+\paragraph{Transzendente Funktionen}
+\begin{align*}
+   y &= \mathrm{e}^x    &| &y^{\prime} = \mathrm{e}^x \\
+   y &= \ln{x}          &| &y^{\prime} = \frac{1}{x} \\
+   y &= \sin{x}         &| &y^{\prime} = \cos{x} \\
+   y &= \cos{x}         &| &y^{\prime} = - \sin{x} \\
+   y &= \tan{x}         &| &y^{\prime} = \frac{1}{\cos^2{x}} \\
+   y &= \cot{x}         &| &y^{\prime} = \frac{-1}{\sin^2{x}} \\
+\end{align*}
+
+Extrempunkte
+\begin{align*}
+    y^{\prime}=0 &\land y^{\prime\prime} > 0  \Rightarrow  \textrm{Maximum} \\
+    y^{\prime}=0 &\land y^{\prime\prime} < 0  \Rightarrow  \textrm{Minimum}
+\end{align*}
+
+
+Wendepunkte
+\begin{align*}
+    y^{\prime\prime}=0 &\land y^{\prime\prime\prime} \ne 0 \land y^{\prime} \ne 0
+\end{align*}
+Sattelpunkt
+\begin{align*}
+    y^{\prime\prime}=0 &\land y^{\prime\prime\prime} \ne 0 \land y^{\prime} = 0
+\end{align*}
+
+
+
+
