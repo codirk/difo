@@ -1,27 +1,64 @@
 \section{Folgen und Reihen}
-\subsection{Arithmetische folgen und Reihen}
+\subsection{Arithmetische Folgen und Reihen}
 
 \begin{align*}
 d &=a_{n+1} - a_n = const. ; n \in \mathbb{N}
 \end{align*}
 
-Arithmetisches Mittel
+\paragraph{Arithmetisches Mittel}
 \begin{align*}
     a_n=\frac{a_{n-1}+a_{n+1}}{2}
 \end{align*}
 
-Funktionsforschrift
+\paragraph{Funktionsforschrift}
 \begin{align*}
     a_n = a_1+(n-1) \cdot d ; d \in \{d|d \neq 0\}
 \end{align*}
 
-Summenformel
+\paragraph{Summenformel}
 \begin{align*}
-    \sum_{n=1}^{n} a_n &= \frac{a_1+a_n}{2} \cdot n \\
-    &= \sum_{n=1}^{n} a_1 +(n-1) \cdot d \\
+    \sum_{k=1}^{n} a_k &= \frac{a_1+a_n}{2} \cdot n \\
+    &= \sum_{k=1}^{n} a_1 +(k-1) \cdot d \\
     &= \frac{n}{2}[2a_1+(n-1) \cdot d]
 \end{align*}
 
 
 
-\subsection{Geometrische folgen und Reihen}
+\subsection{Geometrische Folgen und Reihen}
+\begin{align*}
+    q = \frac{a_{n+1}}{a_n} = const. ; a_n \neq 0
+\end{align*}
+
+\paragraph{Geometrisches Mittel}
+\begin{align*}
+    a_n= \sqrt{a_{n-1} \cdot a_{n+1}}
+\end{align*}
+
+\paragraph{Funktionsforschrift}
+\begin{align*}
+    a_n = a_1 \cdot q^{n-1} ; q \in \{q | q \neq 0\}
+\end{align*}
+
+\paragraph{Summenformel}
+\begin{align*}
+    \sum_{k=1}^{n} a_k &= \sum_{k=1}^{n} a_1 \cdot q^{k-1}\\
+    &= a_1 \frac{q^n-1}{q-1} ; \textrm{für} |q| > 1\\
+    &= a_1 \frac{1-q^n}{1-q} ; \textrm{für} |q| < 1
+\end{align*}
+
+\subsubsection{Unendliche geometrische Folgen und Reihen}
+\begin{align*}
+    s_n &=\sum_{k=1}^{\infty} a_1 \cdot q^{k-1}\\
+    |q|<1: \lim_{n \to \infty } s_n &= \frac{a_1}{1-q}\\
+    |q|>1: \lim_{n \to \infty } s_n &= \infty
+\end{align*}
+
+\subsubsection{Zinssatzformel}
+\begin{align*}
+    K_n &= K_0 \cdot (1 + \frac{p}{100})^n = K_0 \cdot q^n \\
+    q &= 1 + \frac{p}{100}
+\end{align*}
+
+$K_0$ : Betrag des Kapitals \\
+$p$ : Prozentsatz \\
+$n$ : \# der Jahre
