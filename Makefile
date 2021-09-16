@@ -8,16 +8,33 @@ DVIPS = dvips
 COPY = if test -r $*.toc; then cp $*.toc $*.toc.bak; fi
 RM = rm -f
 
-TEXFILES=$(wildcard *.tex)
-TARGETS=$(patsubst %.tex,%.pdf,$(TEXFILES))
+TEX_INPUTS=$(wildcard *.tex)
+TEX_TARGETS=$(patsubst %.tex,%.pdf,$(TEX_INPUTS))
 #TARGETS=$(patsubst %.tex,%.ps,$(TEXFILES)) $(patsubst %.tex,%.pdf,$(TEXFILES))
 
 RERUN = "(There were undefined references|Rerun to get (cross-references|the bars) right|Table widths have changed. Rerun LaTeX.|Linenumber reference failed)"
 RERUNBIB = "No file.*\.bbl|Citation.*undefined"
 
+
+PNG_INPUTS=$(wildcard */*.png */*/*.png */*/*/*.png)
+PNG_TARGETS=$(patsubst %.png,%.eps,$(INPUTS))
+
+GOALS = $(TEX_TARGETS)
+
+all: $(GOALS)
+	@echo $(GOALS) test
+
+%.eps: %.pdf
+	@echo $< $@
+	convert $< $@
+
 GOALS = $(TARGETS)
 
 all: $(GOALS)
+
+all-recursive:
+	for dir in $(wildcard *); do if [ -d $$dir ] && [ -f $$dir/Makefile ]; then cd $$dir; $(MAKE) all; cd ..; fi; done
+
 
 display: $(OUTPUT)
 	open $<

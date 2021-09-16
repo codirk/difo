@@ -10,16 +10,18 @@
 
 \author{Dirk~Messetat}
 \date{\today}
-\newcommand{\versionsnummer}{1.0.0-SNAPSHOT}
+\newcommand{\versionsnummer}{0.7-SNAPSHOT}
 
 % URL:
 \newcommand{\url}{}
 
 % Titel:
-\title{Mathematische \\
-FORMELSAMMLUNG \\[2ex] \small Version: \versionsnummer \\[2ex] \texttt{ \url{http://github.com/codirk/formelsamlung} }\\
- \hfill\break
-Klasse 5-13
+\title{Die mathematische \\
+FORMELSAMMLUNG \\[2ex] DIFO \\[2ex] \small Version: \versionsnummer \\
+\hfill\break
+\qrcode[height=1in]{https://github.com/codirk/difo/releases} \\
+\hfill\break
+\texttt{ \url{https://github.com/codirk/difo/releases} }
 }
 
 %\documentclass[12pt,a4paper,fleqn,twoside,pdf,final]{scrartcl}
@@ -56,11 +58,6 @@ Klasse 5-13
 %\RequirePackage{creativecommons}
 \RequirePackage[hidelinks]{hyperref}
 
-\RequirePackage[
-    type={CC},
-    modifier={by-nc-sa},
-    version={3.0},
-]{doclicense}
 
 
 % striked out text
@@ -105,4 +102,23 @@ Klasse 5-13
   (\p2) foreach \i in {3,4,1,2} {--node[auto=right]{#1} (\p\i)}}}}
 
 \RequirePackage{siunitx}
+
+
+\usepackage{
+babel,
+hyperxmp,
+}
+
+% this works with pdflatex but not with latex
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+
+%\RequirePackage{fontawesome5}
+
+
+
+
 

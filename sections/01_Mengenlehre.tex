@@ -6,23 +6,24 @@
 
 \begin{tabular}[h]{lll}
 
-Symbol &Menge & ggg \\
+% The symbols \land, \lor and \lnot have synonyms: \wedge, \vee and \neg
+Symbol &Menge & Formel \\
 \hline
-$\cup$ & Vereinigungsmenge	 & \{\} \\
-$\cap$ & Schnittmenge	 & \{\} \\
-$\setminus$ & Differenzmenge	 & \{\} \\
-$\triangle$ & Symmetrische Differenz & \{\} \\
-$\times$ & Kartesisches Produkt & \{\} \\
-$\dot\cup$ & Vereinigung disjunkter Mengen  & \{\} \\
-$\sqcup$ & Disjunkte Vereinigung der Mengen  & \{\} \\
-$\bar{A}$ & Komplement & \{\} \\
-$\mathcal{P}$ & Potenzmenge & \{\} \\
+$\cup$ & Vereinigungsmenge	 & \{$x \in M \lor x \in N$\} \\
+$\cap$ & Schnittmenge	 & \{$x \in M \land x \in N$\} \\
+$\setminus$ & Differenzmenge	 & \{$x \in M \land x \notin N$\} \\
+$\triangle$ & Symmetrische Differenz & \{TBD\} \\
+$\times$ & Kartesisches Produkt & \{TBD\} \\
+$\dot\cup$ & Vereinigung disjunkter Mengen  & \{TBD\} \\
+$\sqcup$ & Disjunkte Vereinigung der Mengen  & \{TBD\} \\
+$\bar{A}$ & Komplement & \{TBD\} \\
+$\mathcal{P}$ & Potenzmenge & \{TBD\} \\
 \end{tabular}
 
 \subsection{Characteristische Mengen}
 
 \begin{tabular}[h]{lll}
-Symbol &Menge & ggg \\
+Symbol &Menge & Beispiele \\
 \hline
 $\emptyset$ & leere Menge & \{\} \\
 $\mathbb{P}$ & Primzahlen & \{2,3,5,7,11,13,...\} \\
@@ -32,11 +33,45 @@ $\mathbb{Z}$ & Ganze Zahlen & \{..,-3,-2,-1,0,1,2,3,...\} \\
 $\mathbb{Z}^+$ & Ganze Zahlen & \{1,2,3,..\} \\
 $\mathbb{Z}^-$ & Ganze Zahlen & \{...,-3,-2,-1\} \\
 $\mathbb{Q}$ & Rationale Zahlen & \{ $\frac{p}{q} | (p \in \mathbb{Z}) \wedge (q \in  \mathbb{Z} \setminus \{0 \} ) $ \} \\
-$\mathbb{R}$ & Reelle Zahlen & \{\} \\
-$\mathbb{I}$ & Irrationale Zahlen & \{\} \\
+$\mathbb{I}$ & Irrationale Zahlen & \{$\sqrt{2},\pi, e,...$\} \\
+$\mathbb{R}$ & Reelle Zahlen & $\mathbb{R} \cup \mathbb{I}$\\
 $\mathbb{T}$ & Transzendente Zahlen & \{ $\pi, e$ \} \\
-$\mathbb{C}$ & Komplexe Zahlen & \{\} \\
+$\mathbb{C}$ & Komplexe Zahlen & \{ $x + iy | x,y \in \mathbb{R} $\} \\
 \end{tabular}
+
+\subsection{Teilbarkeitsregeln (natürliche Zahlen)}
+Ist a durch t ohne Rest teilbar?\\
+$t|a$ t teilt a
+
+
+$t=2$ wenn die letzte Ziffer eine durch 2 teilbare Zahl darstellt\\
+$t=3$ wenn die Quersumme durch 3 teilbar ist\\
+$t=4$ wenn die letzten \textbf{zwei} Ziffern eine durch 4 teilbare Zahl bilden\\
+$t=5$ wenn die letzte Ziffer eine durch 5 teilbare Zahl darstellt\\
+$t=6$ wenn die Zahl durch 2 und 3 teilbar ist\\
+$t=7$ (Für die Zahl 7 gibt es keine einfache Teilbarkeitsregel!)\\
+$t=8$ wenn die letzten \textbf{drei} Ziffern eine durch 8 teilbare Zahl bilden\\
+$t=9$ wenn die Quersumme durch 9 teilbar ist\\
+$t=10$ wenn die letzte Ziffer eine 0 ist
+
+Komplexere Regeln \\
+$t=7$ wenn die alternierende 3er-Quersumme durch 7 teilbar ist\\
+$t=11$ wenn die alternierende Quersumme durch 11 teilbar ist\\
+$t=13$ wenn die alternierende 3er-Quersumme durch 11 teilbar ist
+
+
+\subsection{Quersummenregeln}
+\subsubsection{Quersumme}
+$Q(1234)=4+3+2+1=10$
+
+\subsubsection{Alternierende Quersumme}
+
+$Q^{\prime}(1234)=4-3+2-1=2$\\
+$Q^{\prime}(4321)=1-2+3-4=-1$\\
+$Q^{\prime}(3223)=3-2+2-3=0$\\
+$Q^{\prime}(68786979)=9+9+8+8-(7+6+7+6)=34-26=8$
+
+
 
 
 \subsection{Intervalle}
@@ -46,4 +81,4 @@ $\mathbb{C}$ & Komplexe Zahlen & \{\} \\
 (a,b) &= ]a,b[ =  \{x| a <  x < b, x \in \mathbb{R}\} \\
 [a,b) &= [a,b[ =  \{x| a \leq  x < b, x \in \mathbb{R}\} \\
 (a,b] &= ]a,b] =  \{x| a <  x \leq b, x \in \mathbb{R}\}
- \end{align*}
+\end{align*}
