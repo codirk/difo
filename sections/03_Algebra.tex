@@ -22,8 +22,80 @@ T_1 &= T_2 | : a &\longrightarrow& & \frac{T_2}{a} &= \frac{T_2}{a} &a \in \{a|a
 
 
 \subsubsection{Linieare Gleichungen}
-\paragraph{Determinanten}
-\paragraph{Cramer'sche Regel}
+
+\paragraph{2 Gleichungen mit 2 Unbekannten}
+
+\begin{align*}
+a x + by - c = 0\\
+d x + e y - f = 0\\
+oder \\
+a_{11} x_1 + a_{12} x_2 - K_1 = 0\\
+a_{21} x_1 + a_{22} x_2 - K_2 = 0\\
+\end{align*}
+
+\subparagraph{Determinaten}
+\begin{align*}
+D= a_{11} a_{22} - a_{12} a_{21} = \left|
+    \begin{array}{ccc}
+       a_{11} & a_{12} \\
+       a_{21} & a_{22} \\
+    \end{array}
+    \right|
+\end{align*}
+
+\begin{align*}
+D_{{x}_1}= K_1 a_{22} - K_2 a_{12} = \left|
+     \begin{array}{ccc}
+        K_1 & a_{12} \\
+        K_2 & a_{22} \\
+     \end{array}
+     \right|
+\end{align*}
+
+\begin{align*}
+D_{{x}_2}= K_2 a_{11} - K_1 a_{21} = \left|
+     \begin{array}{ccc}
+        a_{11} & K_1 \\
+        a_{21} & K_2 \\
+     \end{array}
+     \right|
+\end{align*}
+
+\subparagraph{Cramer'sche Regel}
+Wenn alle Gleichungen linear unabhängig sind
+\begin{align*}
+D &\neq 0
+\end{align*}
+dann
+\begin{align*}
+x_1 &= \frac{ D_{{x}_1} }{D} \\
+x_2 &= \frac{ D_{{x}_2} }{D} \\
+\end{align*}
+
+
+
+\paragraph{m-Gleichungen mit n-Unbekannten}
+Die Cramer'sche Regel gild analog für m Gleichungen mit n Variablen.
+\begin{align*}
+a_{11}x_{1}+a_{12}x_{2}+a_{13}x_{1}+...+a_{1n}x_{2}-c_{1}&=0 \\
+a_{21}x_{1}+a_{22}x_{2}+a_{23}x_{1}+...+a_{2n}x_{2}-c_{1}&=0 \\
+a_{31}x_{1}+a_{32}x_{2}+a_{33}x_{1}+...+a_{3n}x_{2}-c_{1}&=0 \\
+...\\
+a_{m1}x_{1}+a_{m2}x_{2}+a_{m3}x_{1}+...+a_{mn}x_{2}-c_{m}&=0 \\
+\end{align*}
+
+\subparagraph{Determinaten}
+$$
+D=\left|
+\begin{array}{ccc}
+   a_{11} & \cdots & a_{1n} \\
+   \vdots & \ddots & \vdots \\
+   a_{n1} & \cdots & a_{nn}
+\end{array}
+\right|
+$$
+
+
 
 \subsection{Quadratische Gleichungen}
 Allgemeine Form:
