@@ -1,2 +1,106 @@
 \section{Vectorrechung}
-$\vec{B}$
+
+\newcommand{\myvec}[3]{
+\left(
+    \begin{array}{c}
+    #1 \\ #2 \\ #3
+    \end{array}
+\right)
+}
+
+
+\subsection{Darstellung}
+$$
+\vec{a}= \vec{a}_x +\vec{a}_y +\vec{a}_z = a_xi +a_yj + a_zk= \myvec{a_x}{a_y}{a_z}
+$$
+
+\subsection{Betrag}
+$$
+|\vec{a}|= a = \sqrt{a_x^2 +a_y^2 + a_z^2}
+$$
+
+\subsection{Einheitsvector}
+$$
+  \vec{a}_0 = \frac{\vec{a}}{|\vec{a}|}  \longrightarrow \vec{a}_0 \cdot \vec{a} = a \cdot \vec{a}
+$$
+
+\subsection{Addition}
+\begin{align*}
+  \vec{a} \pm \vec{b} &= (a_xi +a_yj + a_zk) \pm (b_xi +b_yj + b_zk)\\
+  &= (a_x+b_x)i +(a_y+b_y)j + (a_z+b_z)k \\
+  &=  \myvec{a_x \pm b_x}{a_y \pm b_y}{a_z \pm b_z}
+\end{align*}
+
+\subsection{Nullvector}
+\begin{align*}
+  \vec{a}-\vec{a}&= \vec{0} \\
+  |\vec{0}|&=0
+\end{align*}
+
+\subsection{Multiplikation mit Skalar}
+\begin{align*}
+ n \cdot \vec{a} =   \myvec{n \cdot a_x}{n \cdot a_y}{n \cdot a_z}
+\end{align*}
+
+\subsection{Multiplikation von Vectoren (Skalarprodukt)}
+\begin{align*}
+ \vec{a} \cdot \vec{b} =  |\vec{a}| \cdot |\vec{b}| \cos{(\vec{a},\vec{b})}
+\end{align*}
+
+
+\subsection{Gesetze}
+\begin{align*}
+ \vec{a} \cdot \vec{b} = \vec{b} \cdot \vec{a} (assoziativ) \\
+ n \cdot (\vec{a} \cdot \vec{b}) =  (n \cdot \vec{a}) \cdot \vec{b} = \vec{a} \cdot(n \cdot \vec{b})  (kommutativ) \\
+ \vec{a} \cdot (\vec{b} \pm \vec{b}) = \vec{a} \cdot \vec{b} \pm  \vec{a} \cdot \vec{c} (distributiv) \\
+\end{align*}
+
+\subsection{Sonderfall}
+\begin{align*}
+ \vec{a} \cdot \vec{a} &= |\vec{a}| \cdot |\vec{a}| \cdot \cos 0^\circ \\
+ &=  \vec{a}^2 = a^2
+\end{align*}
+
+\subsection{Kreuzprodukt}
+\begin{align*}
+ \vec{a} \times \vec{b} &= \left|
+                               \begin{array}{ccc}
+                                  i & j & k \\
+                                  a_x & a_y & a_z \\
+                                  b_x & b_y & b_z \\
+                               \end{array}
+                               \right|\\
+                         =   \left|
+                              \begin{array}{ccc}
+                                 a_y & a_z  \\
+                                 b_y & b_z \\
+                              \end{array}
+                              \right|i + \\
+                              \left|
+                              \begin{array}{ccc}
+                                 a_z & a_x  \\
+                                 b_z & b_x \\
+                              \end{array}
+                              \right|j + \\
+                             \left|
+                             \begin{array}{ccc}
+                                a_x & a_y  \\
+                                b_x & b_y \\
+                             \end{array}
+                             \right|k
+\end{align*}
+
+\subsection{Spatprodukt}
+\begin{align*}
+ \vec{a} \cdot \vec{b} \cdot \vec{c} &=    \left|
+                                           \begin{array}{ccc}
+                                              a_x & a_y & a_z \\
+                                              b_x & b_y & b_z \\
+                                              c_x & c_y & c_z \\
+                                           \end{array}
+                                           \right|\\
+\end{align*}
+
+
+
+
