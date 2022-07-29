@@ -4,7 +4,7 @@ Sie verfolgt das Ziel außschließlich die notwendigen Formeln bis zur 13 Klasse
 
 Dieses Vorhaben startete 2021 für meine Tochter, die jetzt in die fünfte Klasse kommen wird.
 
-Somit wird diese Formelsammlung in den nächsten 8 Jahren bei Bedarf stetic erweitert werden.
+Somit wird diese Formelsammlung in den nächsten 8 Jahren bei Bedarf stetig erweitert werden.
 
 Jeder der einen Fehler findet, darf mir sehr gern eine Mail 
 - git [at] messetat [dot] de 
